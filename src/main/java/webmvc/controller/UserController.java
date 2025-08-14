@@ -37,11 +37,10 @@ public class UserController {
         return "redirect:/users";
     }
 
-    @GetMapping("/delete")
+    @PostMapping("/delete")
     public String delete(@RequestParam int id) {
-        if (id > 0) {
-            userService.delete(id);
-        }
+        userService.delete(id);
         return "redirect:/users";
     }
+
 }

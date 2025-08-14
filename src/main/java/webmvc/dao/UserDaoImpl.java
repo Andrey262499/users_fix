@@ -32,7 +32,9 @@ public class UserDaoImpl implements UserDao {
     @Override
     public void delete(int id) {
        User user = sessionFactory.getCurrentSession().get(User.class, id);
-       sessionFactory.getCurrentSession().remove(user);
+       if(user != null){
+           sessionFactory.getCurrentSession().delete(user);
+       }
     }
 
     @Transactional

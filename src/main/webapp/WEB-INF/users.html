@@ -25,8 +25,7 @@
     <input type="email" th:field="*{email}" placeholder="Новый Email"/>
     <button type="submit">Обновить</button>
 </form>
-<form th:action="@{/users}" method="post">
-    <input type="hidden" name="_method" value="delete"/>
+<form th:action="@{/users/delete}" method="post">
     <input type="number" name="id" placeholder="ID to delete"/>
     <button type="submit">Удалить</button>
 </form>
